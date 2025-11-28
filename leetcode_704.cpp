@@ -29,3 +29,19 @@
 // All the integers in nums are unique.
 // nums is sorted in ascending order.
 
+class Solution {
+public:
+    bool isPerfectSquare(int num) {
+        if (num < 2) return true;
+
+        long long l = 2, r = num / 2; // no need to search above num/2 for num>=2
+        while (l <= r) {
+            long long mid = l + (r - l) / 2;
+            long long sq = mid * mid;
+            if (sq == num) return true;
+            if (sq < num) l = mid + 1;
+            else r = mid - 1;
+        }
+        return false;
+    }
+};
