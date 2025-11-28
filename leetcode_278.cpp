@@ -49,3 +49,5 @@ public:
         return left; // left == right == first bad version
     }
 };
+
+// here is simple and most optimal solution 
