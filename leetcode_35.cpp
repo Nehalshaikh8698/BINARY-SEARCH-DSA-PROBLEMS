@@ -50,3 +50,5 @@ public:
         return left; // insertion point
     }
 };
+
+// simple c++ code and most optimal
