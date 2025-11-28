@@ -26,3 +26,22 @@
 // All the integers in each row are sorted in ascending order.
 // All the integers in each column are sorted in ascending order.
 // -109 <= target <= 109
+
+
+class Solution {
+public:
+    bool searchMatrix(vector<vector<int>>& matrix, int target) {
+        int m = matrix.size();
+        int n = matrix[0].size();
+
+        int row = 0;
+        int col = n - 1;
+
+        while (row < m && col >= 0) {
+            if (matrix[row][col] == target) return true;
+            else if (matrix[row][col] > target) col--;
+            else row++;
+        }
+        return false;
+    }
+};
