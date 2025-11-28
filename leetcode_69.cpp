@@ -46,3 +46,5 @@ public:
         return hi;
     }
 };
+
+// here is simple and optimal solution
