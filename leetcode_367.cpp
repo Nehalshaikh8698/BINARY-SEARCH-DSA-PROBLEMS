@@ -30,19 +30,16 @@
 class Solution {
 public:
     bool isPerfectSquare(int num) {
-        if (num < 1) return false;
-
-        long long left = 1, right = num;  // use long long to avoid overflow
+        long long left = 1, right = num;
 
         while (left <= right) {
             long long mid = left + (right - left) / 2;
-            long long sq = mid * mid;
 
-            if (sq == num)
+            if (mid == num / mid && num % mid == 0) 
                 return true;
-            else if (sq < num)
+            else if (mid < num / mid) 
                 left = mid + 1;
-            else
+            else 
                 right = mid - 1;
         }
 
@@ -50,4 +47,5 @@ public:
     }
 };
 
-// this is not most optimal solution of this problem
+
+// this is most optimal solution of this problem
